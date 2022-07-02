@@ -1,7 +1,9 @@
 # package folder
-/server-data/bundler
-/server-data/logs
+bundler
+logs
+libraries
 
 # server package
 server-data/spigot-1.19.jar
 server-data/spigot_server-1.19.jar
+minecraft_server.1.19.jar
