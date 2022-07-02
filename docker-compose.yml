@@ -8,6 +8,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: SPIGOT
+      MEMORY: "2G"
     tty: true
     stdin_open: true
     restart: unless-stopped
