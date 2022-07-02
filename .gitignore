@@ -1,6 +1,7 @@
 # package folder
-/bundler
+/server-data/bundler
+/server-data/logs
 
 # server package
-spigot-1.19
-spigot_server-1.19
+server-data/spigot-1.19.jar
+server-data/spigot_server-1.19.jar
