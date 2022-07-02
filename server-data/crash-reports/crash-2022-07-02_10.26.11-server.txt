@@ -1,0 +1,233 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 7/2/22, 10:26 AM
+Description: Watching Server
+
+java.lang.Error: Watchdog
+	at java.base@17.0.3/jdk.internal.misc.Unsafe.allocateInstance(Native Method)
+	at java.base@17.0.3/java.lang.invoke.DirectMethodHandle.allocateInstance(Unknown Source)
+	at java.base@17.0.3/java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(DirectMethodHandle$Holder)
+	at java.base@17.0.3/java.lang.invoke.Invokers$Holder.linkToTargetMethod(Invokers$Holder)
+	at java.base@17.0.3/java.util.function.Predicate.and(Unknown Source)
+	at bes.a(SourceFile:53)
+	at beq.a(SourceFile:32)
+	at bcr.e(SourceFile:45)
+	at bca.d(SourceFile:516)
+	at bca.a(SourceFile:475)
+	at bno.T(SourceFile:359)
+	at bbh.eN(SourceFile:770)
+	at bbf.w_(SourceFile:2639)
+	at bbh.w_(SourceFile:553)
+	at ban.w_(SourceFile:127)
+	at bmh.w_(SourceFile:57)
+	at bbf.k(SourceFile:2384)
+	at bbh.k(SourceFile:353)
+	at afo.a(SourceFile:711)
+	at afo$$Lambda$4982/0x00000008015c58c8.accept(Unknown Source)
+	at cga.a(SourceFile:466)
+	at afo.a(SourceFile:370)
+	at afo$$Lambda$4970/0x00000008015bede8.accept(Unknown Source)
+	at cyl.a(SourceFile:54)
+	at afo.a(SourceFile:338)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:875)
+	at aep.b(SourceFile:289)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:819)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:665)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:258)
+	at net.minecraft.server.MinecraftServer$$Lambda$4315/0x00000008014511e0.run(Unknown Source)
+	at java.base@17.0.3/java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.base@17.0.3/jdk.internal.misc.Unsafe.allocateInstance(Native Method)
+	at java.base@17.0.3/java.lang.invoke.DirectMethodHandle.allocateInstance(Unknown Source)
+	at java.base@17.0.3/java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(DirectMethodHandle$Holder)
+	at java.base@17.0.3/java.lang.invoke.Invokers$Holder.linkToTargetMethod(Invokers$Holder)
+	at java.base@17.0.3/java.util.function.Predicate.and(Unknown Source)
+	at bes.a(SourceFile:53)
+	at beq.a(SourceFile:32)
+	at bcr.e(SourceFile:45)
+	at bca.d(SourceFile:516)
+	at bca.a(SourceFile:475)
+	at bno.T(SourceFile:359)
+	at bbh.eN(SourceFile:770)
+	at bbf.w_(SourceFile:2639)
+	at bbh.w_(SourceFile:553)
+	at ban.w_(SourceFile:127)
+	at bmh.w_(SourceFile:57)
+	at bbf.k(SourceFile:2384)
+	at bbh.k(SourceFile:353)
+	at afo.a(SourceFile:711)
+	at afo$$Lambda$4982/0x00000008015c58c8.accept(Unknown Source)
+	at cga.a(SourceFile:466)
+	at afo.a(SourceFile:370)
+	at afo$$Lambda$4970/0x00000008015bede8.accept(Unknown Source)
+	at cyl.a(SourceFile:54)
+	at afo.a(SourceFile:338)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:875)
+	at aep.b(SourceFile:289)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:819)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:665)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:258)
+
+-- Thread Dump --
+Details:
+	Threads: "Reference Handler" daemon prio=10 Id=2 RUNNABLE
+	at java.base@17.0.3/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+	at java.base@17.0.3/java.lang.ref.Reference.processPendingReferences(Unknown Source)
+	at java.base@17.0.3/java.lang.ref.Reference$ReferenceHandler.run(Unknown Source)
+
+
+"Finalizer" daemon prio=8 Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@69f48e6d
+	at java.base@17.0.3/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@69f48e6d
+	at java.base@17.0.3/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.base@17.0.3/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.base@17.0.3/java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+
+"Signal Dispatcher" daemon prio=9 Id=4 RUNNABLE
+
+
+"Notification Thread" daemon prio=9 Id=10 RUNNABLE
+
+
+"Common-Cleaner" daemon prio=8 Id=11 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@67336d23
+	at java.base@17.0.3/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@67336d23
+	at java.base@17.0.3/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.base@17.0.3/jdk.internal.ref.CleanerImpl.run(Unknown Source)
+	at java.base@17.0.3/java.lang.Thread.run(Unknown Source)
+	at java.base@17.0.3/jdk.internal.misc.InnocuousThread.run(Unknown Source)
+
+
+"DestroyJavaVM" prio=5 Id=13 RUNNABLE
+
+
+"Timer hack thread" daemon prio=5 Id=19 TIMED_WAITING
+	at java.base@17.0.3/java.lang.Thread.sleep(Native Method)
+	at ad$9.run(SourceFile:845)
+
+
+"Server thread" prio=5 Id=21 RUNNABLE
+	at java.base@17.0.3/jdk.internal.misc.Unsafe.allocateInstance(Native Method)
+	at java.base@17.0.3/java.lang.invoke.DirectMethodHandle.allocateInstance(Unknown Source)
+	at java.base@17.0.3/java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(DirectMethodHandle$Holder)
+	at java.base@17.0.3/java.lang.invoke.Invokers$Holder.linkToTargetMethod(Invokers$Holder)
+	at java.base@17.0.3/java.util.function.Predicate.and(Unknown Source)
+	at bes.a(SourceFile:53)
+	at beq.a(SourceFile:32)
+	at bcr.e(SourceFile:45)
+	...
+
+
+"Server console handler" daemon prio=5 Id=23 RUNNABLE (in native)
+	at java.base@17.0.3/java.io.FileInputStream.readBytes(Native Method)
+	at java.base@17.0.3/java.io.FileInputStream.read(Unknown Source)
+	at java.base@17.0.3/java.io.BufferedInputStream.read1(Unknown Source)
+	at java.base@17.0.3/java.io.BufferedInputStream.read(Unknown Source)
+	-  locked java.io.BufferedInputStream@630ce51d
+	at java.base@17.0.3/sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at java.base@17.0.3/sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at java.base@17.0.3/sun.nio.cs.StreamDecoder.read(Unknown Source)
+	-  locked java.io.InputStreamReader@260e6718
+	at java.base@17.0.3/java.io.InputStreamReader.read(Unknown Source)
+	...
+
+
+"Netty Epoll Server IO #0" daemon prio=5 Id=24 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:209)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:202)
+	at io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:294)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base@17.0.3/java.lang.Thread.run(Unknown Source)
+
+
+"Netty Epoll Server IO #1" daemon prio=5 Id=29 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:209)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:202)
+	at io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:294)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base@17.0.3/java.lang.Thread.run(Unknown Source)
+
+
+"RCON Listener #1" prio=5 Id=30 RUNNABLE
+	at java.base@17.0.3/sun.nio.ch.Net.poll(Native Method)
+	at java.base@17.0.3/sun.nio.ch.NioSocketImpl.park(Unknown Source)
+	at java.base@17.0.3/sun.nio.ch.NioSocketImpl.timedAccept(Unknown Source)
+	at java.base@17.0.3/sun.nio.ch.NioSocketImpl.accept(Unknown Source)
+	at java.base@17.0.3/java.net.ServerSocket.implAccept(Unknown Source)
+	at java.base@17.0.3/java.net.ServerSocket.platformImplAccept(Unknown Source)
+	at java.base@17.0.3/java.net.ServerSocket.implAccept(Unknown Source)
+	at java.base@17.0.3/java.net.ServerSocket.implAccept(Unknown Source)
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@6bc40252
+
+
+"Server Watchdog" daemon prio=5 Id=31 RUNNABLE
+	at java.management@17.0.3/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.3/sun.management.ThreadImpl.dumpAllThreads(Unknown Source)
+	at java.management@17.0.3/sun.management.ThreadImpl.dumpAllThreads(Unknown Source)
+	at aes.run(SourceFile:49)
+	at java.base@17.0.3/java.lang.Thread.run(Unknown Source)
+
+
+
+Stacktrace:
+	at aes.run(SourceFile:65)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+-- Performance stats --
+Details:
+	Random tick rate: 3
+	Level stats: ResourceKey[minecraft:dimension / minecraft:overworld]: players: 0, entities: 216,216,123,529,529,0,0 [minecraft:skeleton:20,minecraft:creeper:20,minecraft:chicken:19,minecraft:item:18,minecraft:zombie:17], block_entities: 15 [minecraft:mob_spawner:8,minecraft:sculk_sensor:4,minecraft:sculk_catalyst:2,minecraft:sculk_shrieker:1], block_ticks: 5394, fluid_ticks: 280, chunk_source: Chunks[S] W: 2209 E: 216,216,123,529,529,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_end]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 0 E: 0,0,0,0,0,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_nether]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 0 E: 0,0,0,0,0,0,0
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19
+	Minecraft Version ID: 1.19
+	Operating System: Linux (amd64) version 5.4.0-1018-aws
+	Java Version: 17.0.3, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1079411000 bytes (1029 MiB) / 2075918336 bytes (1979 MiB) up to 2075918336 bytes (1979 MiB)
+	CPUs: 1
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+	Identifier: Intel64 Family 6 Model 79 Stepping 1
+	Microarchitecture: Broadwell (Server)
+	Frequency (GHz): 2.30
+	Number of physical packages: 1
+	Number of physical CPUs: 1
+	Number of logical CPUs: 1
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 992.56
+	Virtual memory used (MB): 1825.03
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xmx2G -Xms2G
+	Server Running: true
+	Player Count: 0 / 20; []
+	Data Packs: vanilla, file/bukkit (incompatible)
+	World Generation: Stable
+	Is Modded: Probably not. Server jar signature and brand is untouched
+	Type: Dedicated Server (map_server.txt)
